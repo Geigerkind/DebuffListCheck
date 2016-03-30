@@ -1,0 +1,215 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+    ..\..\..\FrameXML\UI.xsd">
+	
+	<Button name="DLC_ButtonTemplate" hidden="true" virtual="true">
+		<Size x="240" y="30" />
+		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets left="4" right="4" top="4" bottom="4" />
+			<TileSize val="12" />
+			<EdgeSize val="12" />
+			<Color r="0.157" g="0.08" b="0.06" a="1" />
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<Texture name="$parent_Icon">
+					<Size x="20" y="20" />
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="5" y="-5" />
+						</Anchor>
+					</Anchors>
+				</Texture>
+				<FontString name="$parent_Name" inherits="GameFontNormal" justifyH="LEFT" justifyV="CENTER">
+					<Size x="215" y="30" /> 
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parent_Icon" relativePoint="RIGHT">
+							<Offset x="5" y="0" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnEnter>
+				GameTooltip:SetOwner(this, "TOPLEFT")
+				GameTooltip:AddLine("Click to cast spell on master target")
+				GameTooltip:Show()
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide()
+			</OnLeave>
+			<OnClick>
+				DLC:CastSpell(this)
+			</OnClick>
+		</Scripts>
+	</Button>
+	
+	<GameTooltip name="DLCTT" frameStrata="TOOLTIP" hidden="false" parent="UIParent" inherits="GameTooltipTemplate">
+		<Scripts>
+			<Onload>
+				this:SetOwner(WorldFrame, "ANCHOR_NONE")
+			</Onload>
+	   </Scripts>
+	</GameTooltip>
+	
+	<Frame name="DLC_Frame" hidden="false" parent="UIParent" movable="true" enableMouse="true">
+		<Size x="250" y="50" />
+		<Anchors>
+			<Anchor point="CENTER" />
+		</Anchors>
+		<Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+			<BackgroundInsets left="4" right="4" top="4" bottom="4" />
+			<TileSize val="12" />
+			<EdgeSize val="12" />
+			<Color r="0.157" g="0.08" b="0.06" a="1" />
+		</Backdrop>
+		<Layers>
+			<Layer level="ARTWORK">
+				<FontString name="$parent_Name" inherits="GameFontNormalLarge" justifyH="LEFT" text="Target">
+					<Size x="230" y="25" /> 
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="10" y="-4" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="$parent_SubName" inherits="GameFontNormalLarge" justifyH="LEFT" text="Host's Target">
+					<Size x="230" y="25" /> 
+					<Anchors>
+						<Anchor point="TOP" relativeTo="$parent_Name" relativePoint="BOTTOM">
+							<Offset x="0" y="9" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Frames>
+			<Button name="$parent_Target">
+				<Size x="40" y="40" />
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset x="-5" y="-5" />
+					</Anchor>
+				</Anchors>
+				<NormalTexture file="Interface\Icons\ability_hunter_snipershot" />
+				<PushedTexture file="Interface\Icons\ability_hunter_snipershot" />
+				<HighlightTexture file="Interface\Icons\ability_hunter_snipershot" alphaMode="ADD" />
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "TOPLEFT")
+						GameTooltip:AddLine("Set master target. You can also bind that key.")
+						GameTooltip:Show()
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+					<OnClick>
+						DLC:SetTarget()
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parent_HostTarget">
+				<Size x="40" y="40" />
+				<Anchors>
+					<Anchor point="RIGHT" relativeTo="$parent_Target" relativePoint="LEFT" />
+				</Anchors>
+				<NormalTexture file="Interface\Icons\ability_rogue_sprint" />
+				<PushedTexture file="Interface\Icons\ability_rogue_sprint" />
+				<HighlightTexture file="Interface\Icons\ability_rogue_sprint" alphaMode="ADD" />
+				<Scripts>
+					<OnEnter>
+						GameTooltip:SetOwner(this, "TOPLEFT")
+						GameTooltip:AddLine("Target host's target")
+						GameTooltip:Show()
+					</OnEnter>
+					<OnLeave>
+						GameTooltip:Hide()
+					</OnLeave>
+					<OnClick>
+						DLC:TargetHost()
+					</OnClick>
+				</Scripts>
+			</Button>
+			<Button name="$parent_Button1" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP">
+						<Offset x="0" y="-45" />
+					</Anchor>
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button2" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button1" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button3" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button2" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button4" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button3" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button5" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button4" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button6" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button5" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button7" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button6" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button8" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button7" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button9" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button8" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+			<Button name="$parent_Button10" inherits="DLC_ButtonTemplate">
+				<Anchors>
+					<Anchor point="TOP" relativeTo="$parent_Button9" relativePoint="BOTTOM" />
+				</Anchors>
+			</Button>
+		</Frames>
+		<Scripts>
+			<OnMouseUp>
+				this:StopMovingOrSizing()
+			</OnMouseUp>
+			<OnMouseDown>
+				this:StartMoving()
+			</OnMouseDown>
+			<OnEnter>
+				DLC:ShowTooltip()
+			</OnEnter>
+			<OnLeave>
+				GameTooltip:Hide()
+			</OnLeave>
+			<OnLoad>
+				DLC:OnLoad()
+				this:RegisterEvent("PLAYER_TARGET_CHANGED")
+				this:RegisterEvent("CHAT_MSG_ADDON")
+			</OnLoad>
+			<OnEvent>
+				DLC:OnEvent(event)
+			</OnEvent>
+			<OnUpdate>
+				DLC:OnUpdate(arg1)
+			</OnUpdate>
+		</Scripts>
+	</Frame>
+	
+</Ui>

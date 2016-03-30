@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: DebuffListCheck |cFFFF8080-Shino-|r
+## Notes: This addon provides a list for the designated class to apply a debuff on a target.
+## Author: Shino <Synced> - Kronos
+## SavedVariablesPerCharacter: DLCToggle
+
+DebuffListCheck.lua
+DebuffListCheck.xml
