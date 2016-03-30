@@ -1,0 +1,3 @@
+<Bindings>
+	<Binding name="Set DLC master target" description="Set DLC master target" header="DebuffListCheck">DLC:SetTarget()</Binding>
+</Bindings>

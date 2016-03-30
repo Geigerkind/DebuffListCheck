@@ -1,4 +1,5 @@
 DLC = {}
+BINDING_HEADER_DebuffListCheck = "DebuffListCheck"
 DLC.DebuffList = {
 	["Curse of Recklessness"] = "WARLOCK",
 	["Curse of Elements"] = "WARLOCK",
@@ -285,7 +286,7 @@ function DLC:CastSpell(obj)
 		for i=0, 4 do
 			for p=1, 18 do
 				local texture = GetContainerItemInfo(i, p)
-				if texture == "Interface\\Icons\\inv_potion_28"
+				if texture == "Interface\\Icons\\inv_potion_28" then
 					UseContainerItem(i,p)
 					SpellTargetUnit("player")
 					bool = true

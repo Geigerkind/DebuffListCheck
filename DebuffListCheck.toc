@@ -6,3 +6,4 @@
 
 DebuffListCheck.lua
 DebuffListCheck.xml
+Bindings.xml
