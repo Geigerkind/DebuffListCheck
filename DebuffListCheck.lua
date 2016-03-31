@@ -222,7 +222,7 @@ function DLC:UpdateList()
 		["Crystal Yield"] = "WARRIOR",
 		["Thunder Clap"] = "WARRIOR",
 		["Sunder Armor"] = "WARRIOR",
-		["Fairy Fire"] = "DRUID",
+		["Faerie Fire"] = "DRUID",
 	}, 1, true
 	for cat, val in self.CurList do
 		for ca, _ in temp do
