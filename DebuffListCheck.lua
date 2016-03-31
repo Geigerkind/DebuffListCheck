@@ -10,7 +10,7 @@ DLC.DebuffList = {
 	["Crystal Yield"] = "WARRIOR",
 	["Thunder Clap"] = "WARRIOR",
 	["Sunder Armor"] = "WARRIOR",
-	["Fairy Fire"] = "DRUID",
+	["Fairie Fire"] = "DRUID",
 }
 DLC.DebuffListIcons = {
 	["Curse of Recklessness"] = "spell_shadow_unholystrength",
@@ -22,7 +22,7 @@ DLC.DebuffListIcons = {
 	["Crystal Yield"] = "inv_misc_gem_amethyst_01",
 	["Thunder Clap"] = "spell_nature_thunderclap",
 	["Sunder Armor"] = "ability_warrior_sunder",
-	["Fairy Fire"] = "spell_nature_faeriefire",
+	["Fairie Fire"] = "spell_nature_faeriefire",
 }
 DLC.ClassColor = {
 	["WARRIOR"] = {0.78,0.61,0.43},
