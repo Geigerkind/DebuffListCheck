@@ -134,7 +134,7 @@ end
 function DLC:ScanTarget()
 	if self.Target == UnitName("target") and UnitCanAttack("player", "target") and self.Host == player then
 		self.CurList = {}
-		for i=1, 16 do
+		for i=0, 16 do
 			DLCTT:ClearLines()
 			DLCTT:SetUnitDebuff("target", i)
 			local name = DLCTTTextLeft1:GetText()
@@ -142,8 +142,6 @@ function DLC:ScanTarget()
 				if self:TContains(self.DebuffList, name) then
 					tinsert(self.CurList, name)
 				end
-			else
-				break
 			end
 		end
 		self:SendAddonMessage()
