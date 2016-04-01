@@ -232,7 +232,7 @@ function DLC:UpdateList()
 	if DLCToggle then con=false end
 	self:Reset()
 	for cat, val in self:Sort(temp) do
-		if DLC:FilterClass(con, val) then
+		if DLC:FilterClass(con, val[2]) then
 			_G("DLC_Frame_Button"..p.."_Name"):SetText(val[1])
 			_G("DLC_Frame_Button"..p.."_Name"):SetTextColor(self.ClassColor[val[2]][1],self.ClassColor[val[2]][2],self.ClassColor[val[2]][3])
 			_G("DLC_Frame_Button"..p.."_Icon"):SetTexture("Interface\\Icons\\"..self.DebuffListIcons[val[1]])
