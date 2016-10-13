@@ -2,8 +2,8 @@ DLC = {}
 BINDING_HEADER_DebuffListCheck = "DebuffListCheck"
 DLC.DebuffList = {
 	["Curse of Recklessness"] = "WARLOCK",
-	["Curse of Elements"] = "WARLOCK",
-	["Curse of Shadows"] = "WARLOCK",
+	["Curse of the Elements"] = "WARLOCK",
+	["Curse of Shadow"] = "WARLOCK",
 	["Demoralizing Shout"] = "WARRIOR",
 	["Gift of Arthas"] = "WARRIOR",
 	["Nightfall"] = "WARRIOR",
@@ -14,8 +14,8 @@ DLC.DebuffList = {
 }
 DLC.DebuffListIcons = {
 	["Curse of Recklessness"] = "spell_shadow_unholystrength",
-	["Curse of Elements"] = "spell_shadow_chilltouch",
-	["Curse of Shadows"] = "spell_shadow_curseofachimonde",
+	["Curse of the Elements"] = "spell_shadow_chilltouch",
+	["Curse of Shadow"] = "spell_shadow_curseofachimonde",
 	["Demoralizing Shout"] = "ability_warrior_warcry",
 	["Gift of Arthas"] = "spell_shadow_fingerofdeath",
 	["Nightfall"] = "spell_holy_elunesgrace",
@@ -212,8 +212,8 @@ end
 function DLC:UpdateList()
 	local temp, p, con = {
 		["Curse of Recklessness"] = "WARLOCK",
-		["Curse of Elements"] = "WARLOCK",
-		["Curse of Shadows"] = "WARLOCK",
+		["Curse of the Elements"] = "WARLOCK",
+		["Curse of Shadow"] = "WARLOCK",
 		["Demoralizing Shout"] = "WARRIOR",
 		["Gift of Arthas"] = "WARRIOR",
 		["Nightfall"] = "WARRIOR",
